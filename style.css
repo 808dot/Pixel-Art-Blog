@@ -1,0 +1,86 @@
+
+html {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+    header{
+        width: 100vw;
+        min-height: 29.9074074vh;
+        background: url("Header.png") top center;
+        background-size: cover;
+    }
+
+    .content-container-one{
+        width: 100vw;
+        min-height: 29.3518519vh;
+        background: url("Content.png") top center;
+        background-size: cover;
+    }
+    .content-container-second{
+        width: 100vw;
+        min-height: 29.3518519vh;
+        background: url("Revers Content.png") top center;
+        background-size: cover;
+    }
+
+    footer{
+        width: 100vw;
+        min-height: 40.8333333vh;
+        background: url("Footer.png") top center;
+        background-size: cover;
+    }
+    
+    p, h1{
+        margin: 0;
+    }
+
+    .photo-content{
+      width: 15vw;
+      height: 25vh;
+      background: url("Fr.png");
+      background-size: cover;
+        }
+
+    .photo-content img {
+      height: 100%;
+      width: 100%;
+    }
+/* .section1, .section2 {
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .section2 {
+    background: rgb(68,35,19);
+  }
+  .section1::before {
+    content:"";
+    width:100%;
+    height: 100%;
+    position: absolute;
+    background: url("pxArt(1).png") top center;
+    background-size: cover;
+  }
+  .text {
+    top:30%;
+    left:50%;
+    position: absolute;
+    font-family: 'Franklin Gothic Heavy';
+    font-size: 15vw;
+    color:white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+    5px 5px 70px rgba(255,255,255,0.5);
+    transform: scale(1,1.1) translate(-50%, 10%);
+  } */

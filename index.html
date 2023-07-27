@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>PixelArtBlog</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
     <h1>Welcome to Your Website!</h1>
     <nav>
-        <ul>
+      <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        </ul>
+      </ul>
     </nav>
   </header>
 
-  
+
 
   <main>
-        <div class="content-container-one">
-          <div class="photo-content">
-           
-            
-            <!-- <img src="1.png" /> -->
-          </div>
+    <!-- <div class="content-container-one">
+      <div class="photo-content">
 
-        </div>
-        <div class="content-container-second">
-            
-        </div>
-        <div class="content-container-one">
-            
-        </div>
-        <div class="content-container-second">
-            
-        </div>
-        <div class="content-container-one">
-            
-        </div>
+
+        <img src="1.png" />
+      </div>
+
+    </div>
+    <div class="content-container-second">
+
+    </div>
+    <div class="content-container-one">
+
+    </div>
+    <div class="content-container-second">
+
+    </div>
+    <div class="content-container-one">
+
+    </div> -->
+    <script>
+      var toAdd = document.createDocumentFragment();
+      for (var i = 0; i <5; i++) {
+        var contentContainerDiv = document.createElement('div');
+        var photoContentDiv = document.createElement('div');
+        photoContentDiv.className = 'photo-content';
+        var image = document.createElement('img');
+        let strI = i.toString();
+        image.src = 'Album Covers/' + strI + '.jpg';
+        if (i % 2 == 0) {
+          contentContainerDiv.className = 'content-container-one';
+        } else {
+          contentContainerDiv.className = 'content-container-second';
+        }
+
+        toAdd.appendChild(contentContainerDiv)
+        .appendChild(photoContentDiv)
+        .appendChild(image);
+      }
+
+      document.body.appendChild(toAdd);
+    </script>
   </main>
 
   <footer>
-    <p><div class="text"> 2023 By dot for YOU.</div></p>
+    <p>
+      <div class="text"> 2023 By dot for YOU.</div>
+    </p>
   </footer>
 
 </body>
+
 </html>

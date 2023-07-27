@@ -1,61 +1,63 @@
-
 html {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    overflow-x: hidden;
-    overflow-y: scroll;
+  height: 100vh;
+  overflow: hidden;
 }
 
-    header{
-        width: 100vw;
-        min-height: 29.9074074vh;
-        background: url("Header.png") top center;
-        background-size: cover;
-    }
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
-    .content-container-one{
-        width: 100vw;
-        min-height: 29.3518519vh;
-        background: url("Content.png") top center;
-        background-size: cover;
-    }
-    .content-container-second{
-        width: 100vw;
-        min-height: 29.3518519vh;
-        background: url("Revers Content.png") top center;
-        background-size: cover;
-    }
+header {
+  width: 100vw;
+  min-height: 29.9074074vh;
+  background: url("Header.png") top center;
+  background-size: cover;
+}
 
-    footer{
-        width: 100vw;
-        min-height: 40.8333333vh;
-        background: url("Footer.png") top center;
-        background-size: cover;
-    }
-    
-    p, h1{
-        margin: 0;
-    }
+.content-container-one {
+  width: 100vw;
+  min-height: 29.3518519vh;
+  background: url("Content.png") top center;
+  background-size: cover;
+}
 
-    .photo-content{
-      width: 15vw;
-      height: 25vh;
-      background: url("Fr.png");
-      background-size: cover;
-        }
+.content-container-second {
+  width: 100vw;
+  min-height: 29.3518519vh;
+  background: url("Revers Content.png") top center;
+  background-size: cover;
+}
 
-    .photo-content img {
-      height: 100%;
-      width: 100%;
-    }
+footer {
+  width: 100vw;
+  min-height: 40.8333333vh;
+  background: url("Footer.png") top center;
+  background-size: cover;
+}
+
+p,
+h1 {
+  margin: 0;
+}
+
+.photo-content {
+  width: 15vw;
+  height: 25vh;
+  background: url("Fr.png");
+  background-size: cover;
+}
+
+.photo-content img {
+  height: 100%;
+  width: 100%;
+}
+
 /* .section1, .section2 {
     width:100%;
     min-height: 100vh;

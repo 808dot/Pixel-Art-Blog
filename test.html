@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script> 
+
+    function newPicture() {
+ 
+ document.getElementById("image").src="Footer.png";
+ var imgCatch = document.getElementById("image");
+console.log('FDD')
+  console.log(imgCatch)
+  
+  
+ }
+  
+ function oldPicture() {
+  
+ document.getElementById("image").src="1.png";
+  
+  
+ }
+</script>
+</head>
+<body>
+ 
+<img src="1.png" id="image" onmouseover="newPicture()" 
+onmouseout="oldPicture()">
+ 
+</body>
+</html>

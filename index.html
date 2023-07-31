@@ -4,55 +4,49 @@
 <head>
   <title>PixelArtBlog</title>
   <link rel="stylesheet" href="style.css">
+  <script src="photoHover.js"></script> 
 </head>
 
 <body>
 
   <header>
-    <h1>Welcome to Your Website!</h1>
+    <!-- <h1>Welcome to Your Website!</h1>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-    </nav>
+    </nav> -->
   </header>
 
 
 
   <main>
-    <!-- <div class="content-container-one">
-      <div class="photo-content">
-
-
-        <img src="1.png" />
-      </div>
-
-    </div>
-    <div class="content-container-second">
-
-    </div>
-    <div class="content-container-one">
-
-    </div>
-    <div class="content-container-second">
-
-    </div>
-    <div class="content-container-one">
-
-    </div> -->
     <script>
       var toAdd = document.createDocumentFragment();
+      var albumName = ['Testing', 'LVA', 'LLA', 'ALLA']
       for (var i = 0; i <5; i++) {
         var contentContainerDiv = document.createElement('div');
+
         var photoContentDiv = document.createElement('div');
         photoContentDiv.className = 'photo-content';
+        // photoContentDiv.id = albumName[i];
+
+        let onmouseoverFunction = 'startGif(' + '"' + albumName[i] + '"' + ')';
+        let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i] + '"' + ')';
+
+
+        photoContentDiv.setAttribute("onmouseover", onmouseoverFunction);
+        photoContentDiv.setAttribute("onmouseout", onmouseoutFunction);
+
         var image = document.createElement('img');
+        image.id = albumName[i];
         let strI = i.toString();
-        image.src = 'Album Covers/' + strI + '.jpg';
+        image.src = albumName[i] + '/' + strI + '.png';
         if (i % 2 == 0) {
           contentContainerDiv.className = 'content-container-one';
+
         } else {
           contentContainerDiv.className = 'content-container-second';
         }

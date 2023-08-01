@@ -1,16 +1,27 @@
-function startGif(albumName) {
-  //   var gifArray = createGifArray(albumName);
-  // console.log(gifArray);
-  //   console.log(albumName);
-  var imgCatch = document.getElementById(albumName);
-  //   console.log(imgCatch)
+function startGif(idName) {
+  //   var gifArray = createGifArray(idName);
+  // coZnsole.log(gifArray);
+  //   console.log(idName);
+  var lastFour = idName.substr(idName.length - 4);
+  console.log(lastFour);
 
+  if (lastFour == 'copy'){
+    var albumName = idName.substring(0, idName.length - 4);
+    console.log(albumName);
+  }
+  else{
+    var albumName = idName;
+    console.log(albumName);
+  }
+
+  var imgCatch = document.getElementById(idName);
+  //   console.log(imgCatch)
   var counter = 1;
 
   function changer() {
     var gifArray = createGifArray(albumName);
-    console.log(counter);
-    console.log(gifArray[counter]);
+    // console.log(counter);
+    // console.log(gifArray[counter]);
     imgCatch.src = gifArray[counter];
     counter++;
     if (counter === 25) {
@@ -29,11 +40,23 @@ function startGif(albumName) {
   //   });
 }
 
-function oldPicture(albumName) {
+function oldPicture(idName) {
+  var lastFour = idName.substr(idName.length - 4);
+  console.log(lastFour);
+
+  if (lastFour == 'copy'){
+    var albumName = idName.substring(0, idName.length - 4);
+    console.log(albumName);
+  }
+  else{
+    var albumName = idName;
+    console.log(albumName);
+  }
+
+
   var oldPicture = albumName + "/0.png";
-  var imgCatch = document.getElementById(albumName);
+  var imgCatch = document.getElementById(idName);
   imgCatch.src = oldPicture;
-  console.log("XDD");
 }
 
 function createGifArray(albumName) {

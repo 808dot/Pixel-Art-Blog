@@ -4,7 +4,7 @@
 <head>
   <title>PixelArtBlog</title>
   <link rel="stylesheet" href="style.css">
-  <script src="photoHover.js"></script> 
+  <script src="photoHover.js"></script>
 </head>
 
 <body>
@@ -25,35 +25,69 @@
   <main>
     <script>
       var toAdd = document.createDocumentFragment();
-      var albumName = ['Testing', 'LVA', 'LLA', 'ALLA']
-      for (var i = 0; i <5; i++) {
+      var albumName = [['Asap Rocky - Testing', 'Asap Rocky - LVA', 'Asap Rocky - LLA', 'Asap Rocky - ALLA', 'Szczyl - Polska Floryda'],
+                        ['Zdechly Osa - Sprzedalem Dupe', 'Zdechly Osa - Breslau Hardcore', 'Kuban - Co Za Mixtape', 'Otsochodzi - 7', 'Otsochodzi - Slam'],
+                        ['SNOT - Etheral', 'Baron - Subconscious', 'Guzior - ylloM', 'Leh - Flow', 'Pikers - Spiesz Sie Mnie Kochac'],
+                        ['Da Vosk Docta - Internet Ghetto II', 'HASHASHINS - TaWil', 'Deys - Audiogramy', 'Zabson - Nie Kumam', 'Wac Toja - Middle Finger'],
+                        ['Kaz Balagane - Lot022', 'Kaz Balagane - Radio Gruz', 'Kukon - Piekny Bol', 'Kukon - Krakow', 'Kukon - Diably i Zapalki']];
+      for (var i = 0; i < 5; i++) {
         var contentContainerDiv = document.createElement('div');
 
         var photoContentDiv = document.createElement('div');
         photoContentDiv.className = 'photo-content';
-        // photoContentDiv.id = albumName[i];
 
-        let onmouseoverFunction = 'startGif(' + '"' + albumName[i] + '"' + ')';
-        let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i] + '"' + ')';
-
-
-        photoContentDiv.setAttribute("onmouseover", onmouseoverFunction);
-        photoContentDiv.setAttribute("onmouseout", onmouseoutFunction);
-
-        var image = document.createElement('img');
-        image.id = albumName[i];
-        let strI = i.toString();
-        image.src = albumName[i] + '/' + strI + '.png';
         if (i % 2 == 0) {
           contentContainerDiv.className = 'content-container-one';
 
         } else {
           contentContainerDiv.className = 'content-container-second';
         }
+        var photoContentDiv = document.createElement('div');
+          photoContentDiv.className = 'photo-content';
+        for (let j = 0; j < 5; j++) {
+          
+          // photoContentDiv.id = albumName[i];
+          let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + '"' + ')';
+          let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + '"' + ')';
 
-        toAdd.appendChild(contentContainerDiv)
-        .appendChild(photoContentDiv)
-        .appendChild(image);
+
+          
+          var image = document.createElement('img');
+          image.id = albumName[i][j];
+          image.src = albumName[i][j] + '/' + '0' + '.png';
+          image.setAttribute("onmouseover", onmouseoverFunction);
+          image.setAttribute("onmouseout", onmouseoutFunction);
+          toAdd.appendChild(contentContainerDiv)
+            .appendChild(photoContentDiv)
+            .appendChild(image);
+
+
+        }
+        var photoContentDiv = document.createElement('div');
+          photoContentDiv.className = 'photo-content';
+        photoContentDiv.setAttribute("aria-hidden", "false");
+        for (let j = 0; j < 5; j++) {
+          
+          // photoContentDiv.id = albumName[i];
+
+          let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + 'copy"' + ')';
+          let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + 'copy"' + ')';
+
+
+          
+          var image = document.createElement('img');
+          image.id = albumName[i][j] + 'copy';
+          image.src = albumName[i][j] + '/' + '0' + '.png';
+          image.setAttribute("onmouseover", onmouseoverFunction);
+          image.setAttribute("onmouseout", onmouseoutFunction);
+          toAdd.appendChild(contentContainerDiv)
+            .appendChild(photoContentDiv)
+            .appendChild(image);
+
+
+        }
+
+      
       }
 
       document.body.appendChild(toAdd);

@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script> 
 
-    function newPicture() {
- 
- document.getElementById("image").src="Footer.png";
- var imgCatch = document.getElementById("image");
-console.log('FDD')
-  console.log(imgCatch)
-  
-  
- }
-  
- function oldPicture() {
-  
- document.getElementById("image").src="1.png";
-  
-  
- }
-</script>
+<head>
+
+  <link rel="stylesheet" href="test.css">
+  <script src="dist/pixelit.js"></script>
 </head>
+
 <body>
- 
-<img src="1.png" id="image" onmouseover="newPicture()" 
-onmouseout="oldPicture()">
- 
+
+
+  <section>
+
+
+    <!-- <div class="marquee">
+      <ul class="marquee__content">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul> -->
+    <img src="Album Covers/24.jpg" id="pixelitimg" alt="">
+    <canvas id="pixelitcanvas"></canvas>
+    <script src="dist/pixelit.js"></script>
+    <script>
+      //create object
+      const px = new pixelit();
+      for (let i = 2; i < 26; i++) {
+        px.setScale(i);
+        px.draw().pixelate();
+        // px.saveImage(i-2);
+
+      }
+      // px.setScale(2);
+      // px.draw();
+      // px.saveImage();
+    </script>
+
+    <!-- <ul aria-hidden="true" class="marquee__content">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+    </div>
+  </section> -->
+
+
+
+
+
+
 </body>
+
 </html>

@@ -1,0 +1,48 @@
+/* Marquee styles */
+.marquee {
+  --gap: 1rem;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  background: url("Content.png") top center;
+
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Other page demo styles */
+.marquee__content>* {
+  color: white;
+  background: dodgerblue;
+  margin: 2px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.marquee :hover {
+  animation-play-state: paused;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+}

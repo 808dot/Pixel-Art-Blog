@@ -3,15 +3,15 @@ function startGif(idName) {
   // coZnsole.log(gifArray);
   //   console.log(idName);
   var lastFour = idName.substr(idName.length - 4);
-  console.log(lastFour);
+  // console.log(lastFour);
 
   if (lastFour == 'copy'){
     var albumName = idName.substring(0, idName.length - 4);
-    console.log(albumName);
+    // console.log(albumName);
   }
   else{
     var albumName = idName;
-    console.log(albumName);
+    // console.log(albumName);
   }
 
   var imgCatch = document.getElementById(idName);
@@ -42,15 +42,15 @@ function startGif(idName) {
 
 function oldPicture(idName) {
   var lastFour = idName.substr(idName.length - 4);
-  console.log(lastFour);
+  // console.log(lastFour);
 
   if (lastFour == 'copy'){
     var albumName = idName.substring(0, idName.length - 4);
-    console.log(albumName);
+    // console.log(albumName);
   }
   else{
     var albumName = idName;
-    console.log(albumName);
+    // console.log(albumName);
   }
 
 
@@ -67,4 +67,48 @@ function createGifArray(albumName) {
   }
 
   return tmpGifArray;
+}
+
+
+function openInfo(albumName){
+  document.getElementById("album-info").style.visibility = "visible";
+
+  var img = document.getElementById("album-info-img")
+  var picture = albumName + "/24.png";
+  img.src = picture;
+
+  fetch('./dataSet.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // console.log(data.Albums)
+                // console.log(String(albumName))
+                
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('errordddd: ' + err);
+            });
+        function appendData(data) {
+        
+          function isAlbum(album){
+            return album.albumName === albumName;
+          }
+
+          console.log(data.Albums.find(isAlbum));
+
+            var mainContainer = document.getElementById("album-info-tracklist");
+            mainContainer.innerHTML = ""
+            for (var i = 0; i < data.Albums.find(isAlbum).trackList.length; i++) {
+                var div = document.createElement("p");
+                div.innerHTML = data.Albums.find(isAlbum).trackList[i];
+                mainContainer.appendChild(div);
+            }
+        }
+}
+
+function closeInfo(albumName){
+  document.getElementById("album-info").style.visibility = "hidden";
+
 }

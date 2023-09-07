@@ -25,7 +25,46 @@
   <main>
     <script>
       var toAdd = document.createDocumentFragment();
-      var albumName = [['Asap Rocky - Testing', 'Asap Rocky - LVA', 'Asap Rocky - LLA', 'Asap Rocky - ALLA', 'Szczyl - Polska Floryda'],
+      var albumInfo = document.createElement('div');
+      var albumInfoLeft = document.createElement('div');
+      var albumInfoIMG = document.createElement('img');
+      var albumInfoPlayer = document.createElement('div');
+      var albumInfoRight = document.createElement('div');
+      var albumInfoTrackList = document.createElement('div');
+
+      var exitButton = document.createElement('button');
+      exitButton.id = 'album-info-exitbutton'
+      albumInfo.id = 'album-info';
+      albumInfoLeft.id = 'album-info-left';
+      albumInfoIMG.id = 'album-info-img';
+      albumInfoPlayer.id = 'album-info-player';
+      albumInfoRight.id = 'album-info-right';
+      albumInfoTrackList.id = 'album-info-tracklist';
+
+      let onclickFunction = 'closeInfo()';
+      exitButton.setAttribute("onclick", onclickFunction);
+    
+
+      toAdd.appendChild(albumInfo)
+      .appendChild(albumInfoLeft)
+      .appendChild(albumInfoIMG);
+
+      toAdd.appendChild(albumInfo)
+      .appendChild(albumInfoLeft)
+      .appendChild(albumInfoPlayer);
+      
+
+      toAdd.appendChild(albumInfo)
+      .appendChild(albumInfoRight)
+      .appendChild(exitButton);
+
+      toAdd.appendChild(albumInfo)
+      .appendChild(albumInfoRight)
+      .appendChild(albumInfoTrackList);
+
+      
+      
+      var albumName = [['Asap Rocky - Testing', 'Asap Rocky - Long Live ASAP', 'Asap Rocky - Live Love ASAP', 'Asap Rocky - At Long Last ASAP', 'Szczyl - Polska Floryda'],
                         ['Zdechly Osa - Sprzedalem Dupe', 'Zdechly Osa - Breslau Hardcore', 'Kuban - Co Za Mixtape', 'Otsochodzi - 7', 'Otsochodzi - Slam'],
                         ['SNOT - Etheral', 'Baron - Subconscious', 'Guzior - ylloM', 'Leh - Flow', 'Pikers - Spiesz Sie Mnie Kochac'],
                         ['Da Vosk Docta - Internet Ghetto II', 'HASHASHINS - TaWil', 'Deys - Audiogramy', 'Zabson - Nie Kumam', 'Wac Toja - Middle Finger'],
@@ -49,6 +88,7 @@
           // photoContentDiv.id = albumName[i];
           let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + '"' + ')';
           let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + '"' + ')';
+          let onclickFunction = 'openInfo(' + '"' + albumName[i][j] + '"' + ')';
 
 
           
@@ -57,6 +97,7 @@
           image.src = albumName[i][j] + '/' + '0' + '.png';
           image.setAttribute("onmouseover", onmouseoverFunction);
           image.setAttribute("onmouseout", onmouseoutFunction);
+          image.setAttribute("onclick", onclickFunction);
           toAdd.appendChild(contentContainerDiv)
             .appendChild(photoContentDiv)
             .appendChild(image);
@@ -72,6 +113,7 @@
 
           let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + 'copy"' + ')';
           let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + 'copy"' + ')';
+          let onclickFunction = 'openInfo(' + '"' + albumName[i][j] + '"' + ')';
 
 
           
@@ -80,6 +122,7 @@
           image.src = albumName[i][j] + '/' + '0' + '.png';
           image.setAttribute("onmouseover", onmouseoverFunction);
           image.setAttribute("onmouseout", onmouseoutFunction);
+          image.setAttribute("onclick", onclickFunction);
           toAdd.appendChild(contentContainerDiv)
             .appendChild(photoContentDiv)
             .appendChild(image);

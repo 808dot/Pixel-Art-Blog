@@ -21,17 +21,13 @@ header {
 }
 
 .content-container-one {
+  width: 100vw;
+  min-height: 29.3518519vh;
 
- 
   position: relative;
   display: flex;
   overflow: hidden;
   user-select: none;
-
-
-
-  width: 100vw;
-  min-height: 29.3518519vh;
   background: url("Content.png") top center;
   background-size: cover;
 }
@@ -86,11 +82,6 @@ h1 {
 }
 
 .photo-content img {
-  /* min-width: 10vw;
-  min-height: 10vw; */
-  /* width: 10vw;
-  height: 10vw; */
-
   max-width: 14vw;
   max-height: 14vw;
 }
@@ -108,3 +99,49 @@ h1 {
   5px 5px 70px rgba(255,255,255,0.5);
   /* transform: scale(1,1.1) translate(-50%, 10%); */
 } 
+
+#album-info{
+  width: 80vw;
+  height: 80vh;
+  left: 10%;
+  background-color: aqua;
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  visibility:hidden;
+}
+
+#album-info-left{
+  width: 32vw;
+  height: 80vh;
+  display: flex;
+  background-color: brown;
+  flex-direction: column
+
+}
+
+#album-info-right{
+  display: flex;
+  flex-direction: column;
+  width: 48vw;
+  height: 80vh;
+  background-color: rgb(69, 42, 165);
+
+}
+
+#album-info-img{
+  width: 32vw;
+  height: 50vh;
+  background-color: red;
+}
+
+#album-info-player{
+  width: 32vw;
+  height: 100px;
+  min-height: 30vh;
+  background-color: rgb(229, 255, 0);
+}
+
+#album-info-exitbutton{
+
+}

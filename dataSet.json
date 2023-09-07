@@ -1,0 +1,42 @@
+{
+  "Albums" : [{
+  "albumName" : "Asap Rocky - Testing",
+  "trackList" : [
+"Distorted Records Lyrics",
+"A$AP Forever REMIX (Ft. Kid Cudi, Moby & T.I.) Lyrics",
+"Tony Tone Lyrics ",
+"Fukk Sleep (Ft. FKA twigs) Lyrics",
+"Praise the Lord (Da Shine) (Ft. Skepta) Lyrics",
+"CALLDROPS (Ft. Dean Blunt & Kodak Black) Lyrics",
+"Buck Shots Lyrics",
+"Gunz N Butter (Ft. Juicy J) Lyrics",
+"Brotha Man (Ft. French Montana) Lyrics",
+"OG Beeper Lyrics",
+"Kids Turned Out Fine Lyrics",
+"Hun43rd (Ft. Devonté Hynes) Lyrics",
+"Changes Lyrics",
+"Black Tux, White Collar Lyrics",
+"Purity (Ft. Frank Ocean) Lyrics"
+    ]
+},
+     {
+    "albumName" : "Asap Rocky - Live Love ASAP",
+    "trackList" : [
+         "Palace",
+         "Peso",
+         "Bass",
+         "Wassup",
+        " Brand New Guy Feat. Schoolboy Q",
+        " Purple Swag",
+         "Get Lit feat. Fat Tony",
+         "Trilla feat. A$AP Twelvyy & A$AP Nast",
+         "Keep It G feat. Chace Infinite & Spaceghostpurrp",
+         "Houston Old Head",
+        " Acid Drip",
+       "Leaf feat. Main Attrakionz",
+        "Roll One Up",
+        "Demons",
+        "Sandman"
+      ]
+  }]
+}

@@ -25,42 +25,45 @@
   <main>
     <script>
       var toAdd = document.createDocumentFragment();
+
+      // Inicjalizacja okna z informacjami o albumie
       var albumInfo = document.createElement('div');
       var albumInfoLeft = document.createElement('div');
       var albumInfoIMG = document.createElement('img');
       var albumInfoPlayer = document.createElement('div');
       var albumInfoRight = document.createElement('div');
+      var exitButton = document.createElement('button');
       var albumInfoTrackList = document.createElement('div');
 
-      var exitButton = document.createElement('button');
-      exitButton.id = 'album-info-exitbutton'
       albumInfo.id = 'album-info';
       albumInfoLeft.id = 'album-info-left';
       albumInfoIMG.id = 'album-info-img';
       albumInfoPlayer.id = 'album-info-player';
       albumInfoRight.id = 'album-info-right';
+      exitButton.id = 'album-info-exitbutton'
       albumInfoTrackList.id = 'album-info-tracklist';
 
       let onclickFunction = 'closeInfo()';
       exitButton.setAttribute("onclick", onclickFunction);
-    
-
-      toAdd.appendChild(albumInfo)
-      .appendChild(albumInfoLeft)
-      .appendChild(albumInfoIMG);
-
-      toAdd.appendChild(albumInfo)
-      .appendChild(albumInfoLeft)
-      .appendChild(albumInfoPlayer);
       
-
       toAdd.appendChild(albumInfo)
-      .appendChild(albumInfoRight)
-      .appendChild(exitButton);
+        .appendChild(albumInfoLeft)
+        .appendChild(albumInfoIMG);
 
-      toAdd.appendChild(albumInfo)
-      .appendChild(albumInfoRight)
-      .appendChild(albumInfoTrackList);
+        toAdd.appendChild(albumInfo)
+        .appendChild(albumInfoLeft)
+        .appendChild(albumInfoPlayer);
+        
+
+        toAdd.appendChild(albumInfo)
+        .appendChild(albumInfoRight)
+        .appendChild(exitButton);
+
+        toAdd.appendChild(albumInfo)
+        .appendChild(albumInfoRight)
+        .appendChild(albumInfoTrackList);
+
+      // Koniec inicjalizacji informacji o albumie
 
       
       
@@ -69,70 +72,56 @@
                         ['SNOT - Etheral', 'Baron - Subconscious', 'Guzior - ylloM', 'Leh - Flow', 'Pikers - Spiesz Sie Mnie Kochac'],
                         ['Da Vosk Docta - Internet Ghetto II', 'HASHASHINS - TaWil', 'Deys - Audiogramy', 'Zabson - Nie Kumam', 'Wac Toja - Middle Finger'],
                         ['Kaz Balagane - Lot022', 'Kaz Balagane - Radio Gruz', 'Kukon - Piekny Bol', 'Kukon - Krakow', 'Kukon - Diably i Zapalki']];
-      for (var i = 0; i < 5; i++) {
+
+      for (var i = 0; i < albumName.length; i++) {
         var contentContainerDiv = document.createElement('div');
-
-        var photoContentDiv = document.createElement('div');
-        photoContentDiv.className = 'photo-content';
-
+        
         if (i % 2 == 0) {
           contentContainerDiv.className = 'content-container-one';
-
         } else {
           contentContainerDiv.className = 'content-container-second';
         }
         var photoContentDiv = document.createElement('div');
           photoContentDiv.className = 'photo-content';
-        for (let j = 0; j < 5; j++) {
-          
-          // photoContentDiv.id = albumName[i];
+
+        for (let j = 0; j < albumName[i].length; j++) {
+          var image = document.createElement('img');
           let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + '"' + ')';
           let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + '"' + ')';
           let onclickFunction = 'openInfo(' + '"' + albumName[i][j] + '"' + ')';
 
-
-          
-          var image = document.createElement('img');
           image.id = albumName[i][j];
           image.src = albumName[i][j] + '/' + '0' + '.png';
           image.setAttribute("onmouseover", onmouseoverFunction);
           image.setAttribute("onmouseout", onmouseoutFunction);
           image.setAttribute("onclick", onclickFunction);
+
           toAdd.appendChild(contentContainerDiv)
             .appendChild(photoContentDiv)
             .appendChild(image);
-
-
         }
+
         var photoContentDiv = document.createElement('div');
           photoContentDiv.className = 'photo-content';
         photoContentDiv.setAttribute("aria-hidden", "false");
-        for (let j = 0; j < 5; j++) {
-          
-          // photoContentDiv.id = albumName[i];
-
+        for (let j = 0; j < albumName[i].length; j++) {
+          var image = document.createElement('img');
           let onmouseoverFunction = 'startGif(' + '"' + albumName[i][j] + 'copy"' + ')';
           let onmouseoutFunction = 'oldPicture(' + '"' + albumName[i][j] + 'copy"' + ')';
           let onclickFunction = 'openInfo(' + '"' + albumName[i][j] + '"' + ')';
 
-
-          
-          var image = document.createElement('img');
           image.id = albumName[i][j] + 'copy';
           image.src = albumName[i][j] + '/' + '0' + '.png';
+
           image.setAttribute("onmouseover", onmouseoverFunction);
           image.setAttribute("onmouseout", onmouseoutFunction);
           image.setAttribute("onclick", onclickFunction);
+
           toAdd.appendChild(contentContainerDiv)
             .appendChild(photoContentDiv)
             .appendChild(image);
-
-
         }
-
-      
       }
-
       document.body.appendChild(toAdd);
     </script>
   </main>

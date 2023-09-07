@@ -11,6 +11,7 @@ body {
   transform-style: preserve-3d;
   overflow-x: hidden;
   overflow-y: scroll;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header {
@@ -104,44 +105,58 @@ h1 {
   width: 80vw;
   height: 80vh;
   left: 10%;
-  background-color: aqua;
+  /* background-color: aqua; */
   display: flex;
   position: absolute;
   z-index: 10;
   visibility:hidden;
+  background: url("bg-info.PNG") top center;
+  background-size: cover;
+  border-style: solid;
+  border-width: 7px;
 }
 
 #album-info-left{
   width: 32vw;
   height: 80vh;
   display: flex;
-  background-color: brown;
+  /* background-color: brown; */
   flex-direction: column
 
 }
-
 #album-info-right{
   display: flex;
   flex-direction: column;
+  align-items: end;
   width: 48vw;
   height: 80vh;
-  background-color: rgb(69, 42, 165);
-
+  /* background-color: rgb(69, 42, 165); */
 }
-
+#album-info-tracklist{
+  width: 48vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: gold;
+}
 #album-info-img{
   width: 32vw;
   height: 50vh;
-  background-color: red;
+  /* background-color: red; */
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-width: 7px;
 }
-
 #album-info-player{
   width: 32vw;
   height: 100px;
   min-height: 30vh;
-  background-color: rgb(229, 255, 0);
+  /* background-color: rgb(229, 255, 0); */
 }
 
 #album-info-exitbutton{
-
+  width: 20px;
+  height: 20px;
 }
